@@ -1,0 +1,57 @@
+.advertising {
+    display: none;
+
+    @media (max-width: 767px) {
+        display: block;
+        height: 180px;
+        margin-bottom: -1px;
+        margin-top: -1px;
+    }
+
+
+
+}
+
+.advertising__inner {
+    height: 100%;
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.advertising__text-wrapper {
+
+    width: 60%;
+    display: flex;
+    
+}
+
+.advertising__text {
+    @media (max-width: 767px) {
+        color: #392A2A;
+        text-align: center;
+        font-weight: 700;
+        line-height: 30px;
+        font-size: 2.5rem;
+        margin: auto;
+    }
+
+
+}
+
+.advertising__img-wrapper {
+    background-color: #1B0606;
+    background-image: url(/src/img/advert-background.png);
+    background-position: center center;
+    background-repeat: repeat;
+    width: 40%;
+    height: 200px;
+    padding-top: 13px;
+}
+
+.advertising__baloon-img {
+    margin: auto;
+}

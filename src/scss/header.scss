@@ -1,0 +1,499 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+
+
+//цей елемент створює колір в хедері 
+.header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0C1D30; // на десктопній версіїї цей колір
+    z-index: 2;
+    transition: all .4s linear;
+    @media (max-width: 767px) {
+        background-color: transparent; //вимикаємо колір на мобільній версії
+    }
+}
+
+
+.header.scrolled::before {  //Js додасть клас scrolled під час скролу
+    //запишемо тыльки в медіаправило, щоб не діяли на десктопі
+    @media (max-width: 767px) {
+        transition: all .4s linear;
+        background-color: #1B0606; //даємо новий колір
+    }
+
+}
+
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0px 10px;
+
+}
+
+.header__body {
+    position: relative;
+    /* z-index: 2; */
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    @media (max-width: 767px) {
+        justify-content: flex-end;
+    }
+}
+
+.header__burger {
+    display: none;
+}
+
+.header__menu {}
+
+
+.header__logo-wrapper {
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header__logo {
+    z-index: 3;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 18px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+    @media (max-width: 859px) {
+        margin-bottom: 8px;
+    }
+
+}
+
+.header__phone {
+    z-index: 3;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 0;
+
+
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.header__list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+
+}
+
+.header__list li {
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+}
+
+.header__link {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+
+}
+
+.content {
+    padding-top: 100px;
+}
+
+
+
+
+@media (max-width: 767px) {
+
+    body.lock {
+        overflow: hidden; 
+        /* відрізає все що виходить за межі вікна і таким чином унеможливлює
+        скролл по основному контенту */
+    }
+
+    .header__body {
+        height: 50px;
+    }
+
+
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+    }
+
+    .header__burger::before,
+    .header__burger::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        left: 0;
+        transition: all .3s linear;
+
+
+    }
+    .header__burger::before {
+        top: 0;
+    }
+
+    .header__burger::after {
+        bottom: 0;
+    }
+
+    .header__burger span {
+        position: relative;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 100%;
+        height: 2px;
+        transition: all .3s linear;
+    }
+
+    .header__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #18b5a4;
+        padding: 70px 10px 20px 10px ;
+        transition: all .3s linear;
+        overflow: auto;
+    }
+
+    .header__link {
+        font-size: 1.5rem;
+    }
+
+    .header__menu.active {
+        top: 0;
+    }
+
+    .header__logo  {
+        font-size: 1.5rem;
+    }
+
+    .header__list {
+        display: block;
+    }
+
+    .header__list li {
+        margin-bottom: 10px;
+    }
+    .header__burger.active::before {
+        
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .header__burger.active::after {
+        transform: rotate(135deg);
+
+        bottom: 9px;
+    }
+
+    .header__burger.active span {
+        transform: scale(0);
+    }
+
+    .content {
+        padding-top: 60px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .header {
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     left: 0;
+//     z-index: 9999;
+// }
+
+// .header:before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: #1B0606;
+//     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+//     z-index: 2;
+
+//     @media (max-width: 768px) {
+//         background-color: transparent;
+//         box-shadow: none;
+//     }
+
+
+// }
+
+// .header__menu.scrolled {
+//     @media (max-width: 768px) {
+//         background-color: #1B0606;
+
+//     }
+// }
+
+// .header__body {
+//     position: relative;
+//     /* z-index: 2; */
+//     display: flex;
+//     justify-content: space-between;
+//     height: 73px;
+//     align-items: center;
+
+//     @media (max-width:768px) {
+//         justify-content: flex-end;
+//     }
+// }
+
+
+
+// .header__burger {
+//     display: none;
+// }
+
+// .header__logo {
+//     z-index: 3;
+//     font-size: 2.4rem;
+//     color: #fff;
+//     line-height: 29px;
+//     text-decoration: none;
+//     padding-left: 12px;
+
+
+//     @media (max-width: 767px) {
+//         display: none;
+//     }
+// }
+
+// .header__list {
+//     display: flex;
+//     position: relative;
+//     z-index: 2;
+//     padding-right: 12px;
+
+// }
+
+// .header__list li {
+//     list-style: none;
+//     margin: 0px 0px 0px 20px;
+// }
+
+// .header__link {
+//     display: block;
+//     color: #fff;
+//     text-transform: uppercase;
+//     font-size: 1.5rem;
+//     font-weight: 400;
+//     text-decoration: none;
+//     line-height: 24px;
+
+// }
+
+// .content {
+//     padding-top: 100px;
+// }
+
+
+
+
+
+
+// @media (max-width: 767px) {
+
+//     body.lock {
+//         overflow: hidden;
+//         /* відрізає все що виходить за межі вікна і таким чином унеможливлює
+//         скролл по основному контенту */
+//     }
+
+//     .header__body {
+
+//         height: 50px;
+//         padding-right: 35px;
+//     }
+
+
+//     .header__burger {
+//         display: block;
+//         position: relative;
+//         width: 30px;
+//         height: 20px;
+//         z-index: 3;
+//     }
+
+//     .header__burger::before,
+//     .header__burger::after {
+//         content: "";
+//         display: block;
+//         position: absolute;
+//         width: 100%;
+//         height: 2px;
+//         background-color: #fff;
+//         left: 0;
+//         transition: all .3s linear;
+
+
+//     }
+
+//     .header__burger::before {
+//         top: 0;
+//     }
+
+//     .header__burger::after {
+//         bottom: 0;
+//     }
+
+//     .header__burger span {
+//         position: relative;
+//         background-color: #fff;
+//         position: absolute;
+//         left: 0;
+//         top: 9px;
+//         width: 100%;
+//         height: 2px;
+//         transition: all .3s linear;
+//     }
+
+//     .header__menu {
+//         position: fixed;
+//         // top: -100%;
+//         left: 0;
+//         width: 100%;
+//         height: 100px;
+//         padding: 28px 10px 20px 10px;
+//         transition: all .3s linear;
+//         // background-color: #1B0606;
+
+//         // overflow: auto;
+//     }
+
+//     .header__menu.scrolled {
+//         @media (max-width: 768px) {
+//             background-color: #1B0606;
+    
+//         }
+//     }
+
+
+//     .header__link {
+//         font-size: 1.5rem;
+//     }
+
+//     .header__menu.active {
+//         top: 0;
+//     }
+
+//     .header__logo {
+//         font-size: 1.5rem;
+//     }
+
+//     .header__list {
+//         display: block;
+//     }
+
+//     .header__list li {
+//         margin-bottom: 10px;
+//     }
+
+//     .header__burger.active::before {
+//         transform: rotate(135deg);
+//         top: 9px;
+//     }
+
+//     .header__burger.active::after {
+//         transform: rotate(45deg);
+
+//         bottom: 9px;
+//     }
+
+//     .header__burger.active span {
+//         transform: scale(0);
+//     }
+
+//     .content {
+//         padding-top: 60px;
+//     }
+// }
